@@ -1,0 +1,55 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Frontend.ViewModel"
+        xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="Frontend.View.TaskView"
+        Title="Task Window" Height="358" Width="425">
+    <Viewbox>
+        <Grid Margin="-4,0,4,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="1" Content="Task Name: "/>
+            <TextBox Grid.Row="1" Margin="67,0,10,26" Text="{Binding Task.Tname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  IsReadOnly="{Binding IsReadOnly, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Label Grid.Row="2" Content="Task Description:"/>
+            <TextBox Grid.Row="2" Margin="97,0,10,26" Text="{Binding Task.Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="{Binding IsReadOnly, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Label Grid.Row="3" Content="Task Creation Time:"/>
+            <TextBox Grid.Row="3" Margin="111,0,10,26" IsEnabled="False" Text="{Binding Path= Task.CreationTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2"/>
+
+            <Label Grid.Row="4" Content="Task Due Date:"/>
+            <TextBox Grid.Row="4" Margin="86,0,10,26" IsReadOnly="{Binding Path= IsReadOnly}" Text="{Binding Task.DueDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Label Grid.Row="5" Content="Task Assignee:"/>
+            <TextBox Grid.Row="5" Margin="86,0,10,40" Text="{Binding Task.Assignee}" IsReadOnly="{Binding IsReadOnly, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+               <StatusBar Margin="-142,-24,-232,0" RenderTransformOrigin="0.5,0.5">
+                <StatusBar.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StatusBar.RenderTransform>
+                <StatusBar/>
+            </StatusBar>
+            <Button x:Name="Edit_Button" Content="Edit" HorizontalAlignment="Left" Height="24" Margin="342,0,0,0" VerticalAlignment="Center" Width="73"/>
+            <Button x:Name="Save_Button" Grid.Row="6" HorizontalAlignment="Left" Content="Save" Margin="156,40,0,-20" Width="80" RenderTransformOrigin="0.517,-0.346"/>
+            <Button Grid.Row="6" HorizontalAlignment="Left" Content="Back" Margin="14,40,0,-20" Width="80" Click="BackButton_Click"/>
+            <Button Grid.Row="6" Content="Logout" Margin="322,41,16,-21" Click="LogoutButton_Click"/>
+            <TextBlock Grid.Row="0" HorizontalAlignment="Center" FontWeight="Bold" FontSize="18">
+    <Run Text="Task ID: " />
+    <Run Text="{Binding Task.Tid}" />
+            </TextBlock>
+        </Grid>
+    </Viewbox>
+</Window>
