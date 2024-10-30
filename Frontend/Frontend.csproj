@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="View\delete.jpg" />
+    <None Remove="View\my-boards-icon.tga" />
+    <None Remove="View\plus.jpg" />
+    <None Remove="View\transfer.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Backend\Backend.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="View\delete.jpg" />
+    <Resource Include="View\my-boards-icon.tga" />
+    <Resource Include="View\plus.jpg" />
+    <Resource Include="View\transfer.jpg" />
+  </ItemGroup>
+
+</Project>
