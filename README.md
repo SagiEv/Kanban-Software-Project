@@ -1,4 +1,4 @@
-# kanban
-a Kanban software for tasks management.
+# Kanban Software
+a Kanban software for tasks management
 
-•	Team-based Kanban software developed in GitHub, following n-tier architecture for structured task management.
+•	Team-based software developed in GitHub, Using C# following n-tier architecture for structured task management.
