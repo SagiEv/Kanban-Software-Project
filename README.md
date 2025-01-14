@@ -1,4 +1,3 @@
 # kanban
-315231969_205614894_207629403
-
-32
+a Kanban software for tasks management.
+•	Team-based Kanban software developed in GitHub, following n-tier architecture for structured task management.
